@@ -5,6 +5,7 @@ import gsap from 'gsap';
 const API_CURRENT_WEATHER_CITY = "https://api.openweathermap.org/data/2.5/weather?q=";
 const API_CURRENT_WEATHER_LAT_LON = "https://api.openweathermap.org/data/2.5/weather?lat="
 const KEY = "<SECRET>";
+
 export async function main(lon, lat, city) {
 
     // clear data before API call, so they don't stack up
@@ -16,7 +17,7 @@ export async function main(lon, lat, city) {
 
     try
     {
-        if (lon && lat)
+        if (lon != null || lat != null)
         {
             let response = await axios.get(API_CURRENT_WEATHER_LAT_LON + lat
                 + "&lon=" + lon + "&appid=" + KEY);
@@ -41,17 +42,25 @@ export async function main(lon, lat, city) {
 
     //console.log(util.inspect(result, false, null, true));
 }
-export function getUserLocation(){
+export function getUserLocation()
+{
+    function success(position)
+    {
+        main(position.coords.longitude, position.coords.latitude, null);
+    }
+
+    function error()
+    {
+        document.getElementById('title').innerText = 'Unable to retrieve your location';
+    }
+
     if (navigator.geolocation)
     {
-        navigator.geolocation.getCurrentPosition((position) => {
-            main(position.coords.longitude, position.coords.latitude);
-            }
-        )
+        navigator.geolocation.getCurrentPosition(success, error);
     }
     else
     {
-        return reportError("nothing found");
+        document.getElementById("title").innerText = "Geolocation is not supported by your browser";
     }
 
 

@@ -7,15 +7,17 @@
     </script>
 </head>
 <body>
-    <h1>Music Recommendation Based on Your Location</h1>
-    <input id="city" placeholder="Enter city">
-    <input type="button" value="submit" onclick="lib.getUserLocation()" />
+<h1>Music Recommendation Based on Your Location</h1>
+<input id="city" placeholder="Enter city">
+<input type="button" value="City" onclick="lib.main(null, null, document.getElementById('city').value)" />
 
-    <div>
-        <h2 id="title"></h2>
-        <p><span id="weather"></span></p>
-        <p><span id="weather-description"></span></p>
-    </div>
+<input type="button" id="user-location" value="User Location" onclick="lib.getUserLocation()">
+
+<div>
+    <h2 id="title"></h2>
+    <p><span id="weather"></span></p>
+    <p><span id="weather-description"></span></p>
+</div>
 
 </body>
 </html>
