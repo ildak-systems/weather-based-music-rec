@@ -9,7 +9,9 @@
 <body>
     <h1>Music Recommendation Based on Your Location</h1>
     <input id="city" placeholder="Enter city">
-    <input type="button" value="submit" onclick="lib.getUserLocation()" />
+    <input type="button" value="City" onclick="lib.main(null, null, document.getElementById('city').value)" />
+
+    <input type="button" id="user-location" value="User Location" onclick="lib.getUserLocation()">
 
     <div>
         <h2 id="title"></h2>
