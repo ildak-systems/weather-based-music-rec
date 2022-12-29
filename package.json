@@ -12,11 +12,12 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^1.2.1",
-    "gsap": "^3.11.3"
+    "buffer": "^6.0.3",
+    "gsap": "^3.11.3",
+    "query-string": "^8.1.0"
   },
   "devDependencies": {
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1"
   }
-
 }
