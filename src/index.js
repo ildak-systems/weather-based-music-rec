@@ -1,6 +1,5 @@
 import axios from 'axios';
 import querystring from 'query-string';
-// do not do the {}, does not work
 
 const myAPI = {
     CURRENT_WEATHER_CITY : "https://api.openweathermap.org/data/2.5/weather?q=",
