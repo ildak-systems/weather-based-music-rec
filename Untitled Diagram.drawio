@@ -1,1 +1,157 @@
-<mxfile host="app.diagrams.net" modified="2022-12-30T00:59:11.019Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15" version="20.7.4" etag="dL-D1cwOh_yZ5Zegx4zy" type="github"><diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">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</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-12-31T14:49:32.695Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15" etag="eTO6_IbaZcA0gyDnFE43" version="20.7.4" type="github">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="2019" dy="1129" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-66" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="-310" y="140" width="970" height="555" as="geometry" />
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-16" value="&lt;h4&gt;index.html&lt;/h4&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="20" y="310" width="290" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-76" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="zPmOSTcpXF5EI2EzigEW-17" target="zPmOSTcpXF5EI2EzigEW-43">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-17" value="alternative button:&amp;nbsp;City&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="70" y="500" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="zPmOSTcpXF5EI2EzigEW-18" target="zPmOSTcpXF5EI2EzigEW-46">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-24" value="form 2:&amp;nbsp;&lt;br&gt;1. City Name" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="180" y="500" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-71" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="zPmOSTcpXF5EI2EzigEW-29" target="zPmOSTcpXF5EI2EzigEW-46">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-29" value="Method clickGetLocation()&lt;br&gt;JavaScript Geolocation&lt;br&gt;1. Check location services&lt;br&gt;2. &lt;b&gt;Return user&#39;s location&lt;/b&gt;&lt;br&gt;3. If geolocation error / not available, alert user to use city names instead" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="600" y="370" width="180" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-84" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=-0.004;entryY=0.638;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="zPmOSTcpXF5EI2EzigEW-43" target="zPmOSTcpXF5EI2EzigEW-63">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-43" value="Main Method: onClickCity(city)&lt;br&gt;1. POST api/city: {data: city}&lt;br&gt;2. Receive response (weather)&lt;br&gt;&lt;br&gt;3. Retrieve result (playlist recommendation) from getPlaylist(response)" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="-250" y="350" width="200" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-53" value="To-Do" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="-760" y="-220" width="530" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-25" value="Form 2:&lt;br&gt;add state / country name" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="-600" y="-40" width="190" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-22" value="Form 1:&lt;br&gt;add more in the future for more complex algorithm" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="-600" y="-160" width="190" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-92" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="zPmOSTcpXF5EI2EzigEW-54" target="zPmOSTcpXF5EI2EzigEW-67">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="450" y="270" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-93" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=-0.1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="zPmOSTcpXF5EI2EzigEW-54" target="zPmOSTcpXF5EI2EzigEW-75">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="340" y="230" />
+              <mxPoint x="-150" y="230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-105" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="zPmOSTcpXF5EI2EzigEW-54" target="zPmOSTcpXF5EI2EzigEW-63">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-54" value="Method getPlaylist(response)&lt;br&gt;1. Recieve access token from getAccessToken()&amp;nbsp;&lt;br&gt;2. getAccessToken()&lt;br&gt;3. POST api/recommendation {data: tokens, all the necessary calculations needed for the right algorithm using received weather response}&lt;br&gt;4. Receive response (tracks) &amp;nbsp;&amp;nbsp;" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="340" y="60" width="210" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-69" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="zPmOSTcpXF5EI2EzigEW-63" target="zPmOSTcpXF5EI2EzigEW-66">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-86" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="zPmOSTcpXF5EI2EzigEW-63" target="zPmOSTcpXF5EI2EzigEW-46">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-87" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="155" y="933" as="sourcePoint" />
+            <mxPoint x="-150" y="553" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="155" y="963" />
+              <mxPoint x="-150" y="963" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-102" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="zPmOSTcpXF5EI2EzigEW-63" target="zPmOSTcpXF5EI2EzigEW-94">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="840" y="990" />
+              <mxPoint x="840" y="165" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-63" value="&lt;br&gt;&lt;br&gt;1. (api/lon-lat) GET OpenWeatherMap API&lt;br&gt;{data: lon. lat}&lt;br&gt;&lt;b&gt;return response (weather)&lt;br&gt;&lt;/b&gt;&lt;br&gt;2. (api/city) GET OpenWeatherMap API&lt;br&gt;{data: city}&lt;br&gt;&lt;b&gt;return response (weather)&lt;br&gt;&lt;/b&gt;&lt;br&gt;3. (api/access-token) POST Spotify API {headers: &#39;authorization&#39; : id + secret}&lt;br&gt;&lt;b&gt;return response (token)&lt;br&gt;&lt;/b&gt;&lt;br&gt;4. (api/recommendation) GET Spotify API { data: token, all necessary data based on weather}&lt;br&gt;&lt;b&gt;return response (tracks)&lt;/b&gt;&lt;br&gt;&amp;nbsp;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="155" y="810" width="240" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-65" value="server-side" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="310" y="780" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-85" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="zPmOSTcpXF5EI2EzigEW-46" target="zPmOSTcpXF5EI2EzigEW-63">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-46" value="Main Method: onClickUserLocation()&lt;br&gt;1. Retrieve lon/lat from clickGetLocation()&lt;br&gt;2. POST api/lon-lat: {data: lon/lat}&lt;br&gt;3. Receive response (weather)&lt;br&gt;4.&amp;nbsp;" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="350" y="350" width="200" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-61" value="Client-side" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="82.5" y="110" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-10" value="" style="points=[[0.35,0,0],[0.98,0.51,0],[1,0.71,0],[0.67,1,0],[0,0.795,0],[0,0.65,0]];verticalLabelPosition=bottom;sketch=0;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.user;fillColor=#005073;strokeColor=none;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="115" y="-60" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="zPmOSTcpXF5EI2EzigEW-10">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="165" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-19" value="form 1:&amp;nbsp;&lt;br&gt;1. # of music" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="105" y="350" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-18" value="main button: get user location&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="82.5" y="430" width="165" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-67" value="&lt;b&gt;index.js&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="415" y="350" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-68" value="server.js" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="240" y="804" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-70" value="localhost:3000" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="170" y="750" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-75" value="&lt;b&gt;index.js&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="-185" y="350" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-88" value="POST api/city {data: city} &amp;lt;----&amp;gt; response weather" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="-140" y="930" width="290" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-95" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="zPmOSTcpXF5EI2EzigEW-94" target="zPmOSTcpXF5EI2EzigEW-54">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-96" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" target="zPmOSTcpXF5EI2EzigEW-63">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="820" y="165" as="sourcePoint" />
+            <mxPoint x="470" y="1010" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="840" y="165" />
+              <mxPoint x="840" y="990" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-94" value="Method getAccessToken()&lt;br&gt;1. GET api/access-token&lt;br&gt;2. Receive token&lt;br&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="600" y="55" width="220" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="zPmOSTcpXF5EI2EzigEW-101" value="getPlaylist(response in weather)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="-45" y="200" width="190" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
