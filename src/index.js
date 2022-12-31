@@ -5,8 +5,20 @@ export async function getUserLocation()
     if (navigator.geolocation)
     {
         navigator.geolocation.getCurrentPosition( async (position) => {
-                console.log(position.coords.latitude);
-                //console.log(token);
+
+                const body = {
+                    lon: position.coords.longitude,
+                    lat: position.coords.latitude
+                }
+                const option = {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+
+                }
+
+                const response = await axios.post('/api',body, option)
+
             },
             () =>
             {
