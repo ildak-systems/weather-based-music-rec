@@ -12,7 +12,7 @@ const myAPI = {
 }
 
 const myKEY = {
-    OPENWEATHER_SECRET : "b600ccd3a08727d5e59e74583b7f2b55"
+    OPENWEATHER_SECRET : <SECRET></SECRET>
 }
 
 // parse application/json
@@ -27,10 +27,7 @@ app.post('/api', async (req, res) => {
     console.log(req.body);
 
     let response = await got.get(myAPI.CURRENT_WEATHER_LAT_LON + req.body.lat + "&lon=" + req.body.lon + "&appid=" + myKEY.OPENWEATHER_SECRET);
-    let result = JSON.parse(JSON.stringify(response.data));
-
-    console.log(result);
-
+    res.send(response.body);
 })
 
 // let response = await axios.get(myAPI.CURRENT_WEATHER_LAT_LON + lat
