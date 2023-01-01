@@ -17,7 +17,9 @@ export async function getUserLocation()
 
                 }
 
-                const response = await axios.post('/api',body, option)
+                const response = await axios.post('/api',body, option);
+                const result = await JSON.parse(JSON.stringify(response.data))
+                console.log(result);
 
             },
             () =>
