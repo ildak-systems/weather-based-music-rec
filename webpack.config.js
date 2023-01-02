@@ -7,7 +7,7 @@ module.exports = {
     mode: "development",
     output: {
         filename: 'main.js',
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'public'),
         libraryTarget: 'umd',
         library: 'lib',
         umdNamedDefine: true

@@ -1,76 +1,78 @@
-import axios from 'axios';
-import gsap from 'gsap';
-// do not do the {}, does not work
+import axios from "axios";
 
-const API_CURRENT_WEATHER_CITY = "https://api.openweathermap.org/data/2.5/weather?q=";
-const API_CURRENT_WEATHER_LAT_LON = "https://api.openweathermap.org/data/2.5/weather?lat="
-const KEY = "<SECRET>";
+export async function onClickUserLocation()
+{
+    const user_position = await getUserLocation();
 
-export async function main(lon, lat, city) {
-
-    // clear data before API call, so they don't stack up
-    document.getElementById("title").innerText = "";
-    document.getElementById("weather").innerText = "";
-    document.getElementById("weather-description").innerText = "";
-
-    let result = ""
-
-    try
-    {
-        if (lon != null || lat != null)
-        {
-            let response = await axios.get(API_CURRENT_WEATHER_LAT_LON + lat
-                + "&lon=" + lon + "&appid=" + KEY);
-            result = await JSON.parse(JSON.stringify(response.data));
-        }
-        else if (city)
-        {
-            let response = await axios.get(API_CURRENT_WEATHER_CITY + city + "&appid=" + KEY);
-            result = await JSON.parse(JSON.stringify(response.data));
-        }
-
+    const body = {
+        lon: user_position.coords.longitude,
+        lat: user_position.coords.latitude
     }
-    catch (error)
-    {
-        console.error(error);
-        document.getElementById("title").innerText = "city not found";
+    const option = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
     }
 
-    // watch that video where you can do stuff outside of a try/catch block
-    listCondition(result);
+    // API call to /api/open-weather/get-weather/lon-lat
+    const weather_response = await axios.post('/api/open-weather/get-weather/lon-lat', body, option);
+    const weather_result = weather_response.data;
+    console.log(weather_result);
+
+    const tracks = await getTracks(null, null, null);
 
 
-    //console.log(util.inspect(result, false, null, true));
+
 }
+
+export async function onClickCity(city)
+{
+    const body = {
+        city: city
+    }
+    const options = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
+    const weather_response = await axios.post('/api/open-weather/get-weather/city', body, options);
+    const weather_result_body = weather_response.data;
+    //console.log(weather_result);
+
+}
+
+export async function getTracks(weather, age, limit)
+{
+
+    const token_response = await axios.get('/api/spotify/get-access-token');
+    const token = token_response.data.access_token;
+    // make sure to always specify .data / .body. Always, responses come in a big json file where it includes other stuff
+    // other than what I res.send()
+    const data = {
+        token : token,
+    }
+
+    const tracks = await axios.post('/api/spotify/get-tracks', data);
+    console.log(tracks.data);
+}
+
 export function getUserLocation()
 {
-    function success(position)
-    {
-        main(position.coords.longitude, position.coords.latitude, null);
-    }
+    return new Promise((res, rej) => {
+        if (navigator.geolocation)
+        {
+            navigator.geolocation.getCurrentPosition(res, rej);
+        }
+        else
+        {
+            document.getElementById("title").innerText = "Geolocation is not supported by your browser. Get tracks" +
+                "using city name instead.";
+        }
 
-    function error()
-    {
-        document.getElementById('title').innerText = 'Unable to retrieve your location';
-    }
-
-    if (navigator.geolocation)
-    {
-        navigator.geolocation.getCurrentPosition(success, error);
-    }
-    else
-    {
-        document.getElementById("title").innerText = "Geolocation is not supported by your browser";
-    }
-
-
+    });
 }
 
-export function listCondition(result) {
-    if (result)
-    {
-        document.getElementById("title").innerText = result.name;
-        document.getElementById("weather").innerText += "\n" + result.weather[0].main;
-        document.getElementById("weather-description").innerText += "\n" + result.weather[0].description;
-    }
-}
+
+
+
+

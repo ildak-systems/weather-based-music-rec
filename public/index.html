@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Music Recommendation</title>
-    <script type="module" src="./dist/main.js">
+    <script type="module" src="main.js">
     </script>
 </head>
 <body>
 <h1>Music Recommendation Based on Your Location</h1>
 <input id="city" placeholder="Enter city">
-<input type="button" value="City" onclick="lib.main(null, null, document.getElementById('city').value)" />
+<input type="button" value="City" onclick="lib.onClickCity(document.getElementById('city').value)" />
 
-<input type="button" id="user-location" value="User Location" onclick="lib.getUserLocation()">
+<input type="button" id="user-location" value="User Location" onclick="lib.onClickUserLocation()">
 
 <div>
     <h2 id="title"></h2>
