@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export async function onClickUserLocation()
+export async function onClickUserLocation(age, limit)
 {
     const user_position = await getUserLocation();
 
@@ -19,13 +19,13 @@ export async function onClickUserLocation()
     const weather_result = weather_response.data;
     console.log(weather_result);
 
-    const tracks = await getTracks(null, null, null);
+    const tracks = await getTracks(weather_result, age, limit);
 
 
 
 }
 
-export async function onClickCity(city)
+export async function onClickCity(city, age, limit)
 {
     const body = {
         city: city
@@ -36,23 +36,22 @@ export async function onClickCity(city)
         }
     }
     const weather_response = await axios.post('/api/open-weather/get-weather/city', body, options);
-    const weather_result_body = weather_response.data;
-    //console.log(weather_result);
+    const weather_result = weather_response.data;
+
+    const tracks = await getTracks(weather_result, age, limit);
 
 }
 
 export async function getTracks(weather, age, limit)
 {
+    const token_result = await axios.get('/api/spotify/get-access-token');
+    const token = token_result.data.access_token;
 
-    const token_response = await axios.get('/api/spotify/get-access-token');
-    const token = token_response.data.access_token;
-    // make sure to always specify .data / .body. Always, responses come in a big json file where it includes other stuff
-    // other than what I res.send()
-    const data = {
-        token : token,
+    const tracks_data = {
+        token: token,
     }
 
-    const tracks = await axios.post('/api/spotify/get-tracks', data);
+    const tracks = await axios.post('/api/spotify/get-tracks', tracks_data);
     console.log(tracks.data);
 }
 

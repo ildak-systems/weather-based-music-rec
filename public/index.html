@@ -8,10 +8,14 @@
 </head>
 <body>
 <h1>Music Recommendation Based on Your Location</h1>
-<input id="city" placeholder="Enter city">
-<input type="button" value="City" onclick="lib.onClickCity(document.getElementById('city').value)" />
+<input id="age" placeholder="Enter Your Age">
+<input id="limit" placeholder="# of tracks">
+<input id="city" placeholder="Enter City">
+<input type="button" value="City" onclick="lib.onClickCity(document.getElementById('city').value,
+                    document.getElementById('age').value, document.getElementById('limit').value)" />
 
-<input type="button" id="user-location" value="User Location" onclick="lib.onClickUserLocation()">
+<input type="button" value="User Location" onclick="lib.onClickUserLocation(
+                    document.getElementById('age').value, document.getElementById('limit').value)">
 
 <div>
     <h2 id="title"></h2>
