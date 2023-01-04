@@ -72,7 +72,7 @@ export async function onClickCity(city, age, limit)
     displayWeather(city, weather_result.weather[0].main, weather_result.weather[0].description);
     const tracks = await getTracks(weather_result, age, limit);
     console.log(tracks.data);
-    //displayTracks(tracks.data);
+    displayTracks(tracks.data);
 
 }
 
@@ -112,10 +112,15 @@ export function getUserLocation()
 
 export function displayTracks(tracks)
 {
-    // make divs? for each track in the json array
-    const track_list = tracks.tracks[0].album.album_type;
-    document.getElementById('track').innerText = track_list;
-
+    const parentDiv = document.getElementById('track-list');
+    for (let i = 0; i < tracks.tracks.length; i++)
+    {
+        const songName = document.createElement('span'); // this goes inside the childDiv
+        const childDiv = document.createElement("div");
+        songName.innerText = tracks.tracks[i].name;
+        childDiv.appendChild(songName);
+        parentDiv.appendChild(childDiv);
+    }
 }
 
 export function displayWeather(city, weather, description_weather)
