@@ -9,7 +9,8 @@ const myAPI = {
     CURRENT_WEATHER_CITY : "https://api.openweathermap.org/data/2.5/weather?q=",
     CURRENT_WEATHER_LAT_LON : "https://api.openweathermap.org/data/2.5/weather?lat=",
     ACCESS_TOKEN_SPOTIFY : 'https://accounts.spotify.com/api/token',
-    RECOMMENDATION_SPOTIFY : "https://api.spotify.com/v1/recommendations?limit=10&seed_artists=&seed_genres=rock"
+    RECOMMENDATION_SPOTIFY : "https://api.spotify.com/v1/recommendations?"
+    // limit=10&seed_artists=&seed_genres=rock
 }
 
 // parse application/json
@@ -50,23 +51,43 @@ app.get('/api/spotify/get-access-token', async (local_req, local_res) => {
 
 })
 
-app.post('/api/spotify/calculate', async (local_req, local_res) => {
+// /api/spotify/get-tracks
+app.post('/api/spotify/get-tracks/randomized', async (local_req, local_res) => {
 
-    const weather = local_req.body.weather
+    const weather = local_req.body.weather.weather[0].main;
+    const weather_description = local_req.body.weather.weather[0].description;
     const age = local_req.body.age;
-    const genres = [];
+    const limit = local_req.body.limit.toString();
+    let genres = [];
 
-    if (weather !== 'fog')
+    /** calculate genres (for now). genre limit is 5
+    //  Note: Future features will include where user can select genres (or don't, make an option for these)
+    // For now, randomized genre option is the only feature I have below
+
+    // if statements are main weather
+    // nested ifs can be description
+    **/
+
+    if (weather == 'Clouds' && age < 10)
     {
-
+        genres.push('country');
     }
 
+    else
+    {
+        genres.push('anime');
+    }
 
-})
+    const stringifyGenres = (genres) => {
+        if (genres.length < 2) {
+            return genres[0];
+        }
 
-// /api/spotify/get-tracks
-app.post('/api/spotify/get-tracks', async (local_req, local_res) => {
-
+        if (genres.length > 5)
+        {
+            // pick out genres[] by random pull, genre limit is 5
+        }
+    }
 
     const options = {
         headers: {
@@ -76,8 +97,15 @@ app.post('/api/spotify/get-tracks', async (local_req, local_res) => {
             // make sure to specify .body for response and request
         }
     }
-    const spotify_tracks = await got.get(myAPI.RECOMMENDATION_SPOTIFY, options);
+    console.log("tracks: api call");
+    console.log(myAPI.RECOMMENDATION_SPOTIFY + "limit=" + limit + "&" + "seed_genres=" + stringifyGenres(genres));
+    const spotify_tracks = await got.get(myAPI.RECOMMENDATION_SPOTIFY + "limit=" + limit + "&" +
+        "seed_genres=" + stringifyGenres(genres), options);
     local_res.send(JSON.parse(spotify_tracks.body));
+})
+
+app.post('/api/spotify/get-tracks/genres-selected', async (local_req, local_res) => {
+
 })
 
 const genres = [
