@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Music Recommendation</title>
-    <script type="module" src="main.js">
-    </script>
+    <script type="module" src="main.js"></script>
+    <link rel="stylesheet" href="index.css" />
 </head>
 <body>
 <h1>Music Recommendation Based on Your Location</h1>
-<input id="age" placeholder="Enter Your Age">
-<input id="limit" placeholder="# of tracks">
-<input id="city" placeholder="Enter City">
+<label for="age"></label> <input id="age" placeholder="Enter Your Age">
+<label for="limit"></label> <input id="limit" placeholder="# of tracks">
+<label for="city"></label> <input id="city" placeholder="Enter City">
 <input type="button" value="City" onclick="lib.onClickCity(document.getElementById('city').value,
                     document.getElementById('age').value, document.getElementById('limit').value)" />
 
@@ -25,6 +25,12 @@
 
 <div id="track-list">
     <p><span id="track"></span></p>
+</div>
+
+<div>
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6Rpbzk2LC8xWZI93RyodAq?utm_source=generator"
+            width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media;
+            fullscreen; picture-in-picture" loading="lazy"></iframe>
 </div>
 
 </body>
