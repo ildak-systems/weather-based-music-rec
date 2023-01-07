@@ -71,6 +71,7 @@ export async function onClickCity(city, age, limit)
 
     displayWeather(city, weather_result.weather[0].main, weather_result.weather[0].description);
     const tracks = await getTracks(weather_result, age, limit);
+    console.log(tracks);
     displayTracks(tracks);
     // displayTracks(tracks.data); dont do this, because const tracks is already the body, for some reason. Just pass
     // as tracks, not tracks.data.
@@ -116,10 +117,20 @@ export function displayTracks(tracks)
     const parentDiv = document.getElementById('track-list');
     for (let i = 0; i < tracks.tracks.length; i++)
     {
-        const songName = document.createElement('span'); // this goes inside the childDiv
+        const songID = tracks.tracks[i].id;
+        //const songName = document.createElement('span'); // this goes inside the childDiv
         const childDiv = document.createElement("div");
-        songName.innerText = tracks.tracks[i].name;
-        childDiv.appendChild(songName);
+        const iframe = document.createElement('iframe');
+
+        iframe.setAttribute("style","border-radius:12px");
+        iframe.setAttribute("src", `https://open.spotify.com/embed/track/${songID}?utm_source=generator`);
+        iframe.setAttribute("width", "25%");
+        iframe.setAttribute("height", "352");
+        iframe.setAttribute("allow", "autoplay; clipboard-write; encrypted-media;" +
+            "fullscreen; picture-in-picture");
+        iframe.setAttribute("loading", "lazy");
+
+        childDiv.appendChild(iframe);
         parentDiv.appendChild(childDiv);
     }
 }
