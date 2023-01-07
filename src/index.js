@@ -1,6 +1,6 @@
 import axios from "axios";
 
-resetMessages();
+resetResponses();
 
 export async function onClickUserLocation(age, limit)
 {
@@ -71,8 +71,10 @@ export async function onClickCity(city, age, limit)
 
     displayWeather(city, weather_result.weather[0].main, weather_result.weather[0].description);
     const tracks = await getTracks(weather_result, age, limit);
-    console.log(tracks.data);
-    displayTracks(tracks.data);
+    displayTracks(tracks);
+    // displayTracks(tracks.data); dont do this, because const tracks is already the body, for some reason. Just pass
+    // as tracks, not tracks.data.
+
 
 }
 
@@ -89,7 +91,6 @@ export async function getTracks(weather_result, age, limit)
     }
 
     const tracks = await axios.post('/api/spotify/get-tracks/randomized', tracks_data);
-    //console.log(tracks.data);
     return tracks.data;
 }
 
@@ -135,8 +136,10 @@ export function displayMessage(element, text)
     document.getElementById(element).innerText = text;
 }
 
-export function resetMessages()
+export function resetResponses()
 {
     document.getElementById('message').innerText = "";
+    document.getElementById('weather').innerText = "";
+    document.getElementById('weather-description').innerText = "";
 }
 
