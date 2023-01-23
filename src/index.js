@@ -1,4 +1,5 @@
 import axios from "axios";
+import gsap from "gsap";
 
 resetResponses();
 
@@ -118,10 +119,7 @@ export function displayTracks(tracks)
     for (let i = 0; i < tracks.tracks.length; i++)
     {
         const songID = tracks.tracks[i].id;
-        //const songName = document.createElement('span'); // this goes inside the childDiv
-        const childDiv = document.createElement("div");
         const iframe = document.createElement('iframe');
-
         iframe.setAttribute("style","border-radius:12px");
         iframe.setAttribute("src", `https://open.spotify.com/embed/track/${songID}?utm_source=generator`);
         iframe.setAttribute("width", "25%");
@@ -129,9 +127,9 @@ export function displayTracks(tracks)
         iframe.setAttribute("allow", "autoplay; clipboard-write; encrypted-media;" +
             "fullscreen; picture-in-picture");
         iframe.setAttribute("loading", "lazy");
+        parentDiv.appendChild(iframe);
 
-        childDiv.appendChild(iframe);
-        parentDiv.appendChild(childDiv);
+        gsap.to("iframe", {x: 100, delay: 0.5, duration: 1});
     }
 }
 
@@ -140,6 +138,9 @@ export function displayWeather(city, weather, description_weather)
     document.getElementById('message').innerText = "Current Weather Report in: " + city;
     document.getElementById('weather').innerText = weather;
     document.getElementById('weather-description').innerText = description_weather;
+
+    gsap.to("#message", {x: 100, duration: 1});
+    gsap.to("#weather", {x: 100, duration: 1});
 }
 
 export function displayMessage(element, text)
