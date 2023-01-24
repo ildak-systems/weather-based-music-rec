@@ -72,7 +72,6 @@ app.post('/api/spotify/get-tracks/randomized', async (local_req, local_res) => {
     {
         genres.push('country');
     }
-
     else
     {
         genres.push('anime');
@@ -236,3 +235,5 @@ const genres = [
     "work-out",
     "world-music"
 ]
+
+// gospel music when their marital status is single age > 24

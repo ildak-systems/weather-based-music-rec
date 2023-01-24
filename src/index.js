@@ -102,12 +102,11 @@ export function getUserLocation()
         // make error case for navigator.geolocation
         if (navigator.geolocation)
         {
-            navigator.geolocation.getCurrentPosition(res, rej);
+            navigator.geolocation.getCurrentPosition(res, rej); //returns res (the api response) when promise fulfilled
         }
         else
         {
-            displayMessage('message', "Geolocation is not supported by your browser. Get tracks" +
-                "using city name instead.");
+            rej(`Geolocation is not supported by your browser (insert browser). Please try again using city name`);
         }
 
     });
