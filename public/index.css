@@ -1,4 +1,12 @@
 /* type selector */
-h1 {
-    background-color: orange;
+body {
+    background-color: #f0ece2;
+}
+
+/* div */
+iframe {
+    padding: 50px;
+    border-style: solid;
+    /*border-image: url("images/clouds-border.png");*/
+
 }
