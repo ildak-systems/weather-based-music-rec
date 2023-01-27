@@ -1,4 +1,5 @@
 import axios from "axios";
+import Bowser from "bowser";
 import gsap from "gsap";
 
 resetResponses();
@@ -15,12 +16,24 @@ export async function onClickUserLocation(age, limit)
         limit = 10;
     }
 
-    const user_position = await getUserLocation();
+    let user_position;
+    try
+    {
+        user_position = await getUserLocation();
+    }
+    catch (error)
+    {
+        console.log(error.message);
+        return;
+    }
+
+    // .catch() is a method that you can call on a promise to register a callback function that will be executed when the promise is rejected.
 
     const body = {
         lon: user_position.coords.longitude,
         lat: user_position.coords.latitude
     }
+
     const option = {
         headers: {
             'Content-Type': 'application/json'
@@ -98,17 +111,41 @@ export async function getTracks(weather_result, age, limit)
 
 export function getUserLocation()
 {
-    return new Promise((res, rej) => {
+
+    return new Promise((resolve, reject) => {
         // make error case for navigator.geolocation
         if (navigator.geolocation)
         {
-            navigator.geolocation.getCurrentPosition(res, rej); //returns res (the api response) when promise fulfilled
+            // Resolve with location. location can now be accessed in the .then method.
+            // Basically 1st parameter of geolocation returns GeoLocationPosition obj
+            navigator.geolocation.getCurrentPosition(resolve, (error) => {
+                //returns and error with code/message attributes error.code = 1, error.code = 2, error.code = 3
+                // make a new error object for each error and return it. On the main function, make a conditional.
+                // Something like if (error.name == TIME_OUT) {do something on the front-end}
+                if (error.code === 1)
+                {
+                    reject(Object.assign(new Error(error.message)), {output: "error code 1 working"})
+                }
+                if (error.code === 2)
+                {
+                    reject(Object.assign(new Error(error.message)), {output: "error code 2 working"})
+                }
+                if (error.code === 3)
+                {
+                    reject(Object.assign(new Error(error.message)), {output: "error code 3 working"})
+                }
+            });
+            //returns res (the api response) when promise fulfilled
+
         }
         else
         {
-            rej(`Geolocation is not supported by your browser (insert browser). Please try again using city name`);
+            let browser = () => {
+                return Bowser.getParser(window.navigator.userAgent).getBrowser();
+            }
+            reject(`Geolocation is not supported by your browser: ${browser().name}, ${browser().version}. 
+            Please try again using city name`);
         }
-
     });
 }
 
