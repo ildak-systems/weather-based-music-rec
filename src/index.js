@@ -24,6 +24,18 @@ export async function onClickUserLocation(age, limit)
     catch (error)
     {
         console.log(error.message);
+        if (error.code === 1)
+        {
+            displayMessage("message", "resulted in error 1");
+        }
+        else if (error.code === 2)
+        {
+            displayMessage("message", "resulted in error 2");
+        }
+        else
+        {
+            displayMessage("message", "Please reload and enable user location OR get tracks using city name.");
+        }
         return;
     }
 
@@ -41,16 +53,36 @@ export async function onClickUserLocation(age, limit)
     }
 
     // API call to /api/open-weather/get-weather/lon-lat
-    const weather_response = await axios.post('/api/open-weather/get-weather/lon-lat', body, option);
-    const weather_result = weather_response.data;
-    const city = weather_response.data.name;
-
-    displayWeather(city, weather_result.weather[0].main, weather_result.weather[0].description);
+    let weather_response;
+    let weather_result;
+    try
+    {
+        weather_response = await axios.post('/api/open-weather/get-weather/lon-lat', body, option);
+        weather_result = weather_response.data;
+        const city = weather_response.data.name;
+        displayWeather(city, weather_result.weather[0].main, weather_result.weather[0].description);
+    }
+    catch (error)
+    {
+        console.log(error.code);
+        displayMessage("message", "There was an error reaching the server. Please try again later.");
+        return;
+    }
 
     // if limit is blank. Default limit is 10
+    let tracks;
+    try
+    {
+        tracks = await getTracks(weather_result, age, limit);
+    }
+    catch (error)
+    {
+        console.log(error.code);
+        displayMessage("message", "There was an error reaching the server. Please try again later.");
+        return;
+    }
 
-    const tracks = await getTracks(weather_result, age, limit);
-    console.log(tracks);
+    //console.log(tracks);
     displayTracks(tracks);
 
 }
@@ -80,23 +112,44 @@ export async function onClickCity(city, age, limit)
             'Content-Type': 'application/json'
         }
     }
-    const weather_response = await axios.post('/api/open-weather/get-weather/city', body, options);
-    const weather_result = weather_response.data;
 
-    displayWeather(city, weather_result.weather[0].main, weather_result.weather[0].description);
-    const tracks = await getTracks(weather_result, age, limit);
-    console.log(tracks);
+    let weather_response;
+    let tracks;
+    try
+    {
+        weather_response = await axios.post('/api/open-weather/get-weather/city', body, options);
+        const weather_result = weather_response.data;
+        displayWeather(city, weather_result.weather[0].main, weather_result.weather[0].description);
+        tracks = await getTracks(weather_result, age, limit);
+        //console.log(tracks);
+    }
+    catch (error)
+    {
+        console.log(error.code);
+        displayMessage("message", "There was an error reaching the server. Please try again later.");
+        return;
+    }
+
     displayTracks(tracks);
     // displayTracks(tracks.data); dont do this, because const tracks is already the body, for some reason. Just pass
     // as tracks, not tracks.data.
-
-
 }
 
 export async function getTracks(weather_result, age, limit)
 {
-    const token_result = await axios.get('/api/spotify/get-access-token');
-    const token = token_result.data.access_token;
+    let token_result;
+    let token;
+    try
+    {
+        token_result = await axios.get('/api/spotify/get-access-token');
+        token = token_result.data.access_token;
+    }
+    catch (error)
+    {
+        console.log(error.code);
+        displayMessage("message", "Unable to connect to Spotify at the moment");
+        return;
+    }
 
     const tracks_data = {
         token: token,
@@ -105,7 +158,18 @@ export async function getTracks(weather_result, age, limit)
         limit: limit
     }
 
-    const tracks = await axios.post('/api/spotify/get-tracks/randomized', tracks_data);
+    let tracks;
+    try
+    {
+        tracks = await axios.post('/api/spotify/get-tracks/randomized', tracks_data);
+    }
+    catch (error)
+    {
+        console.log(error.code);
+        displayMessage("message", "There was an error reaching the server. Please try again later.");
+        return;
+    }
+
     return tracks.data;
 }
 
@@ -124,15 +188,15 @@ export function getUserLocation()
                 // Something like if (error.name == TIME_OUT) {do something on the front-end}
                 if (error.code === 1)
                 {
-                    reject(Object.assign(new Error(error.message)), {output: "error code 1 working"})
+                    reject(Object.assign(new Error(error.message)))
                 }
                 if (error.code === 2)
                 {
-                    reject(Object.assign(new Error(error.message)), {output: "error code 2 working"})
+                    reject(Object.assign(new Error(error.message)))
                 }
                 if (error.code === 3)
                 {
-                    reject(Object.assign(new Error(error.message)), {output: "error code 3 working"})
+                    reject(Object.assign(new Error(error.message)))
                 }
             });
             //returns res (the api response) when promise fulfilled
