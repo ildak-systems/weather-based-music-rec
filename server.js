@@ -22,18 +22,42 @@ app.use(express.static('public')); // anything in this directory is public
 
 // /api/open-weather/get-weather/lon-lat
 app.post('/api/open-weather/get-weather/lon-lat', async (local_req, local_res) => {
-    const openweather_response = await got.get(myAPI.CURRENT_WEATHER_LAT_LON + local_req.body.lat + "&lon=" + local_req.body.lon + "&appid=" + process.env.OPENWEATHER_SECRET);
+    let openweather_response;
+    try
+    {
+        openweather_response = await got.get(myAPI.CURRENT_WEATHER_LAT_LON + local_req.body.lat + "&lon=" + local_req.body.lon + "&appid=" + process.env.OPENWEATHER_SECRET);
+    }
+    catch (error)
+    {
+        return new Promise((resolve, reject) => {
+           reject(new Error(error));
+        });
+    }
+
     local_res.send(openweather_response.body);
 })
 
 // /api/open-weather/get-weather/city
 app.post('/api/open-weather/get-weather/city', async (local_req, local_res) => {
-    const openweather_response = await got.get(myAPI.CURRENT_WEATHER_CITY + local_req.body.city + "&appid=" + process.env.OPENWEATHER_SECRET);
+    let openweather_response;
+    try
+    {
+        openweather_response = await got.get(myAPI.CURRENT_WEATHER_CITY + local_req.body.city + "&appid=" + process.env.OPENWEATHER_SECRET);
+    }
+    catch (error)
+    {
+        return new Promise((resolve, reject) => {
+            reject(new Error(error));
+        });
+    }
+
     local_res.send(openweather_response.body);
 })
 
 // /api/spotify/get-access-token
 app.get('/api/spotify/get-access-token', async (local_req, local_res) => {
+
+
     const auth_token = btoa(process.env.SPOTIFY_CLIENT_ID + ':' + process.env.SPOTIFY_CLIENT_SECRET);
     const options = {
         headers: {
@@ -45,8 +69,21 @@ app.get('/api/spotify/get-access-token', async (local_req, local_res) => {
         })
 
     }
-    const spotify_access_token = await got.post(myAPI.ACCESS_TOKEN_SPOTIFY, options);
-    const token_result = JSON.parse(spotify_access_token.body);
+
+    let spotify_access_token;
+    let token_result;
+    try
+    {
+        spotify_access_token = await got.post(myAPI.ACCESS_TOKEN_SPOTIFY, options);
+        token_result = JSON.parse(spotify_access_token.body);
+    }
+    catch (error)
+    {
+        return new Promise((resolve, reject) => {
+            reject(new Error(error));
+        });
+    }
+
     local_res.send(token_result);
 
 })
@@ -72,7 +109,6 @@ app.post('/api/spotify/get-tracks/randomized', async (local_req, local_res) => {
     {
         genres.push('country');
     }
-
     else
     {
         genres.push('anime');
@@ -99,9 +135,23 @@ app.post('/api/spotify/get-tracks/randomized', async (local_req, local_res) => {
     }
     console.log("tracks: api call");
     console.log(myAPI.RECOMMENDATION_SPOTIFY + "limit=" + limit + "&" + "seed_genres=" + stringifyGenres(genres));
-    const spotify_tracks = await got.get(myAPI.RECOMMENDATION_SPOTIFY + "limit=" + limit + "&" +
-        "seed_genres=" + stringifyGenres(genres), options);
+
+    let spotify_tracks;
+    try
+    {
+        spotify_tracks = await got.get(myAPI.RECOMMENDATION_SPOTIFY + "limit=" + limit + "&" +
+            "seed_genres=" + stringifyGenres(genres), options);
+
+    }
+    catch (error)
+    {
+        return new Promise((resolve, reject) => {
+            reject(new Error(error));
+        });
+    }
+
     local_res.send(JSON.parse(spotify_tracks.body));
+
 })
 
 app.post('/api/spotify/get-tracks/genres-selected', async (local_req, local_res) => {
@@ -236,3 +286,5 @@ const genres = [
     "work-out",
     "world-music"
 ]
+
+// gospel music when their marital status is single age > 24
