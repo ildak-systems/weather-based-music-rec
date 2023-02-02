@@ -105,24 +105,91 @@ app.post('/api/spotify/get-tracks/randomized', async (local_req, local_res) => {
     // nested ifs can be description
     **/
 
-    if (weather == 'Clouds' && age < 10)
+    switch (weather)
     {
-        genres.push('country');
-    }
-    else
-    {
-        genres.push('anime');
+        case 'Clear':
+            genres.push('happy');
+            genres.push('punk-rock');
+            genres.push('bluegrass');
+            genres.push('brazil');
+            //genres.push('grunge');
+            break;
+
+        case 'Clouds':
+            genres.push('alt-rock'); // tone the beat of this down, getting too much happy music
+            genres.push('chill'); // very good choice, but maybe more clear? tone the beat down.
+            break;
+
+        case 'Rain' || 'Drizzle':
+            genres.push('blues');
+            genres.push('sad');
+            genres.push('rainy-day');
+            genres.push('trip-hop');
+            genres.push('grunge');
+            //goth
+            break;
+
+        case 'Snow':
+            genres.push('holidays');
+            break;
+
+        case 'Thunderstorm':
+            genres.push('black-metal');
+            genres.push('grindcore');
+            genres.push('black-metal');
+            genres.push('heavy-metal');
+            genres.push('emo');
+            break;
+
+        case 'Smoke' || 'Ash' || 'Dust':
+            genres.push('ambient');
+            break;
+
+            // || (OR) conditionals not functioning correctly?
+        case 'Mist' || 'Fog' || 'Haze':
+            genres.push('ambient');
+            genres.push('goth');
+            break;
+
+        case 'Mist':
+            genres.push('ambient');
+            genres.push('goth');
+            break;
+
+        case 'Sand':
+            genres.push('detroit-techno');
+            genres.push('breakbeat');
+            genres.push('swedish');
+            break;
+
+        case 'Squall': // snowstorm, blizzard
+            genres.push('heavy-metal');
+            genres.push('hardcore');
+            genres.push('gospel');
+            break;
+
+        case 'Tornado':
+            genres.push('black-metal');
+            genres.push('heavy-metal');
+            genres.push('grindcore');
+            genres.push('dubstep');
+            break;
     }
 
     const stringifyGenres = (genres) => {
-        if (genres.length < 2) {
+        if (genres.length === 1) {
             return genres[0];
         }
 
-        if (genres.length > 5)
+        let string_genres = "";
+        for (let i = 0; i < genres.length - 1; i++)
         {
-            // pick out genres[] by random pull, genre limit is 5
+            string_genres += genres[i];
+            string_genres += "%2C";
         }
+        string_genres += genres[genres.length - 1];
+
+        return string_genres;
     }
 
     const options = {
@@ -159,17 +226,17 @@ app.post('/api/spotify/get-tracks/genres-selected', async (local_req, local_res)
 })
 
 const genres = [
-    "acoustic",
-    "afrobeat",
-    "alt-rock",
-    "alternative",
-    "ambient",
+    "acoustic", //-- songs that have guitar in them, a lot of pop has this
+    "afrobeat", // african funk and jazz
+    "alt-rock", //-- linkin park, nirvana type beat
+    "alternative", //-- a lot of pop is considered alternative
+    "ambient", //--
     "anime",
-    "black-metal",
-    "bluegrass",
-    "blues",
-    "bossanova",
-    "brazil",
+    "black-metal",//
+    "bluegrass", //--classic "american" music, cowboy music?
+    "blues", //--
+    "bossanova", // string, peaceful almost like cafe music
+    "brazil", //
     "breakbeat",
     "british",
     "cantopop",
@@ -184,7 +251,7 @@ const genres = [
     "dancehall",
     "death-metal",
     "deep-house",
-    "detroit-techno",
+    "detroit-techno", // typical techno dance music
     "disco",
     "disney",
     "drum-and-bass",
@@ -213,7 +280,7 @@ const genres = [
     "heavy-metal",
     "hip-hop",
     "holidays",
-    "honky-tonk",
+    "honky-tonk", // american country, but without trucks. Plays like bar music
     "house",
     "idm",
     "indian",
@@ -250,9 +317,9 @@ const genres = [
     "post-dubstep",
     "power-pop",
     "progressive-house",
-    "psych-rock",
+    "psych-rock", // try this
     "punk",
-    "punk-rock",
+    "punk-rock", // blink 182, green day sex pistols
     "r-n-b",
     "rainy-day",
     "reggae",
@@ -281,7 +348,7 @@ const genres = [
     "tango",
     "techno",
     "trance",
-    "trip-hop",
+    "trip-hop", // Trip hop is often associated with a moody and introspective atmosphere. its liek urban ambient sounds
     "turkish",
     "work-out",
     "world-music"

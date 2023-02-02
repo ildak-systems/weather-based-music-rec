@@ -82,7 +82,7 @@ export async function onClickUserLocation(age, limit)
         return;
     }
 
-    //console.log(tracks);
+    console.log(tracks);
     displayTracks(tracks);
 
 }
