@@ -103,6 +103,7 @@ app.post('/api/spotify/get-tracks/randomized', async (local_req, local_res) => {
 
     // if statements are main weather
     // nested ifs can be description
+     // 3-17-23 Spotify changed their API so that you HAVE to include seeds for artist and tracks.
     **/
 
     switch (weather)
@@ -111,13 +112,14 @@ app.post('/api/spotify/get-tracks/randomized', async (local_req, local_res) => {
             genres.push('happy');
             genres.push('punk-rock');
             genres.push('bluegrass');
-            genres.push('brazil');
+            //genres.push('brazil');
             //genres.push('grunge');
             break;
 
         case 'Clouds':
-            genres.push('alt-rock'); // tone the beat of this down, getting too much happy music
-            genres.push('chill'); // very good choice, but maybe more clear? tone the beat down.
+            genres.push('happy');
+            genres.push('holidays');
+
             break;
 
         case 'Rain' || 'Drizzle':
@@ -201,13 +203,14 @@ app.post('/api/spotify/get-tracks/randomized', async (local_req, local_res) => {
         }
     }
     console.log("tracks: api call");
-    console.log(myAPI.RECOMMENDATION_SPOTIFY + "limit=" + limit + "&" + "seed_genres=" + stringifyGenres(genres));
+    console.log(myAPI.RECOMMENDATION_SPOTIFY + "limit=" + limit  + "&" + "seed_genres=" + stringifyGenres(genres));
+    // need to add seed tracks / artists in order to use the modified API, no i do not!!!
 
     let spotify_tracks;
     try
     {
-        spotify_tracks = await got.get(myAPI.RECOMMENDATION_SPOTIFY + "limit=" + limit + "&" +
-            "seed_genres=" + stringifyGenres(genres), options);
+        spotify_tracks = await got.get(myAPI.RECOMMENDATION_SPOTIFY + "limit=" + limit  + "&" + "seed_genres=" + stringifyGenres(genres), options);
+        // need to add seed tracks / artists in order to use the modified API
 
     }
     catch (error)
@@ -216,7 +219,7 @@ app.post('/api/spotify/get-tracks/randomized', async (local_req, local_res) => {
             reject(new Error(error));
         });
     }
-
+    console.log("Length: " + spotify_tracks.body);
     local_res.send(JSON.parse(spotify_tracks.body));
 
 })
